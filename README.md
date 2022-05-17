@@ -6,8 +6,9 @@
     <img src="static/main/Logo.png" alt="Logo" width="128" height="128">
   </a>
 <h1 align="center">Pose Plus</h1>
-<h2> <a href="https://pose.plus">Website</a> | <a href="#">Latest Release</a> | <a href="#">Changelog</a>
+<h2> <a href="https://pose.plus">Website</a> | <a href="https://github.com/CJSwitz/pose-plus/releases/latest">Latest Release</a> | <a href="https://github.com/CJSwitz/pose-plus/blob/v1.0.0/CHANGELOG.md">Changelog</a>
 
+<br/>
 <br/>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B661DQ3)

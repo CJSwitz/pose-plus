@@ -7,3 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2022-05-17
 ### Features
 - Initial Release
+
+### Known Issues
+- Occasionally the first image shown in a session will be zoomed in extremely far to the top left corner. The current workaround is to zoom out manually or cycle to the next image.
