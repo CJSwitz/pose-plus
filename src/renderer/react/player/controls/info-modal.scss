@@ -1,0 +1,110 @@
+@use '~CSS/global' as *;
+
+.info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 200ms $eFastOutSlowIn;
+  z-index: 100;
+
+  &--open {
+    opacity: 1;
+  }
+
+  &--close {
+    opacity: 0;
+  }
+
+
+  &__content {
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+    max-width: 66vw;
+    min-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    padding: 0.5rem 1rem 1rem;
+    position: relative;
+
+    min-width: 4rem;
+    overflow: hidden;
+
+  }
+
+  &__header {
+    @include fontLabel;
+    align-self: center;
+    color: $cPri;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+  }
+
+  &__close {
+    fill: $cPri;
+    width: rem(32);
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+
+    transition: all 100ms $eFastOutSlowIn;
+
+    &:hover {
+      opacity: 1;
+      // transform: translateY(-0.125rem) scale(1.1);
+    }
+  }
+
+  &__body {
+    user-select: text;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+  &__row {
+    min-width: 0;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__key {
+    @include fontSemiBold;
+    color: $cPri;
+  }
+
+  &__value {
+    @include fontMedium;
+
+    &--trunc {
+    @include fontRegularItalic();
+      opacity: 0.9;
+      word-break: break-word;
+      min-width: 0;
+      overflow: hidden;
+      text-align: left;
+      white-space: nowrap;
+      direction: rtl;
+      text-overflow: ellipsis;
+    }
+  }
+}

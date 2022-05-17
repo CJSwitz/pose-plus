@@ -1,0 +1,39 @@
+// Global CSS
+// module specific css is included with components
+
+@use '@material/elevation';
+@use 'global' as *;
+
+@import 'fonts';
+@import 'modules';
+
+@include elevation.overlay-common();
+
+// Global Styles
+.root,
+body,
+html {
+  @include fontRegular;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+}
+
+.fillEmpty {
+  flex-grow: 1;
+}
+
+.seperator {
+  height: 2px;
+  background-color: $cBackground;
+}
+
+.vanish {
+  // visibility: hidden;
+  display: none !important;
+}
+
+input {
+    @include fontRegular;
+}

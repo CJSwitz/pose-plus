@@ -1,0 +1,30 @@
+@use '~CSS/global' as *;
+
+.numberfield {
+  @include fontSemiBold;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 0.35rem 0;
+  border: 1px solid black;
+  width: 3rem;
+  margin: 1px;
+  text-align: center;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &--error {
+    border-color: $cError;
+    border-width: 2px;
+    color: $cError;
+    margin: 0px;
+  }
+
+  &--short {
+    width: 2.5rem;
+  }
+}

@@ -1,0 +1,111 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.begin-content{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.summary {
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  margin-top: 1rem;
+  padding: 0.5rem;
+
+  &__info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @include fontLabel;
+    font-size: 1.5rem;
+
+    &--error{
+      color: $cError;
+    }
+  }
+
+  &__span {
+    display: flex;
+    align-items: center;
+
+    opacity: 0.8;
+    margin: 0.5rem;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  &__shuffle {
+    @include fontMedium;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+}
+
+.start-button {
+  @include elevation.elevation(3);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include fontHeader;
+  font-size: 2.5rem;
+  height: 4rem;
+
+  background-color: $cPri;
+  color: white;
+  outline: none;
+  border-radius: 2rem;
+  border: none;
+  padding-right: 1rem;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 2rem;
+    @include elevation.elevation(6);
+    opacity: 0;
+    transition: opacity 200ms $eFastOutSlowIn;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &--disabled {
+    cursor: default;
+    box-shadow: none;
+    background-color: $cGrey;
+
+    &::before {
+      opacity: 0 !important;
+    }
+  }
+
+  &__icon {
+    height: 3rem;
+    fill: white;
+  }
+}

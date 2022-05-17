@@ -1,0 +1,35 @@
+@use '~CSS/global' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+
+  &__title {
+    @include fontHeader;
+    font-size: rem(48);
+    color: $cPri;
+    margin-left: 1rem;
+    display: inline-block;
+  }
+
+  &__summary {
+    @include fontHeader;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+
+    font-size: 1.75rem;
+    margin-right: 1rem;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    margin-right: .5rem;
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+  }
+}

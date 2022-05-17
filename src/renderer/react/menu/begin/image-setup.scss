@@ -1,0 +1,36 @@
+@use '~CSS/global' as *;
+
+.no-sources {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include fontLabel;
+  font-size: 1.5rem;
+  margin: 1rem;
+  opacity: 0.50;
+
+  &__row {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    height: 2rem;
+  }
+}
+
+.image-setup {
+  // For overriding .list flex behaviour
+  flex: 2 1 1rem !important; // Neccesary because this is in a different file
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+
+  & .list__item {
+    flex: 0 0 auto;
+  }
+}

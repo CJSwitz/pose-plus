@@ -1,0 +1,18 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.close-button {
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  fill: white;
+  stroke: black;
+  cursor: pointer;
+
+  @include stickyFadeOut;
+}

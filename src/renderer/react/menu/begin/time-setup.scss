@@ -1,0 +1,33 @@
+@use '~CSS/global' as *;
+
+.time-setup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+  flex: 0 1 auto;
+  max-height: 25vh;
+
+  &--simple {
+    overflow-y: visible;
+  }
+
+  &__row {
+    @include fontMedium;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.125rem 0;
+  }
+
+  &__error {
+    @include fontSemiBold;
+    margin: 0.5rem;
+    color: $cError;
+  }
+
+  &__icon {
+    @include iconButton(28);
+    margin-right: 1rem;
+  }
+}

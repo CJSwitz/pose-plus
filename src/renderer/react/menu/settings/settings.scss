@@ -1,0 +1,35 @@
+@use '~CSS/global' as *;
+
+.settings {
+  max-width: 30rem;
+  display: grid;
+  grid-template-columns: auto 5rem;
+  grid-auto-rows: 2.5rem;
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
+  // place-items: center;
+  justify-items: stretch;
+  align-items: center;
+  align-content: start;
+
+
+  &__label {
+    justify-self: start;
+    align-self: center;
+    grid-column-start: 1;
+    @include fontMedium;
+    font-size: 1rem;
+  }
+
+  &__control {
+    justify-self: center;
+    align-self: stretch;
+    grid-column-start: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}

@@ -1,0 +1,50 @@
+@use '~CSS/global' as *;
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    margin-top: 1rem;
+  }
+
+  &__error {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    color: $cError
+  }
+
+  &__icon {
+    @include iconButton(36);
+    margin: 0 0.5rem;
+  }
+
+  &__meta {
+    @include fontSemiBold;
+    font-size: 1.25rem;
+    // height: 1.25rem;
+    min-width: 1.25rem;
+
+    &--error {
+      fill: $cError;
+      width: rem(36);
+      height: rem(36);
+    }
+
+    &--pending {
+      fill: black;
+      width: rem(36);
+      height: rem(36);
+    }
+  }
+
+  // Not BEM, but much simpler
+  & .button:first-child {
+    margin-right: 1rem;
+  }
+}

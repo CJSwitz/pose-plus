@@ -1,0 +1,64 @@
+@use 'sass:color';
+@use '~CSS/global' as *;
+
+.textfield {
+  position: relative;
+  flex: 1 1 auto;
+  height: rem(48);
+
+  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+
+  box-sizing: border-box;
+
+  margin-left: 1px;
+
+  &--focus {
+    margin-left: 0px; // Gets rid of 1px jitter
+    border: 2px solid $cPri;
+  }
+
+
+  &__input {
+    // position: relative;
+    @include fontMedium;
+    outline: none;
+    font-size: rem(18);
+    z-index: 0;
+    background-color: hsla(0,0%,0%,0);
+    border: 0;
+    padding: 0 rem(16);
+  }
+
+  &__label {
+    @include fontSemiBold;
+    // Can't use opacity directly, it will affect background as well
+    color: color.scale(black, $alpha: -50%);
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: rem(12);
+
+    padding: 0 rem(4);
+    background-color: white;
+
+    top: rem(11);
+    font-size: rem(20);
+
+    transition: top 0.1s $eOutExp;
+    transition: font-size 0.1s $eOutExp;
+
+    &--active {
+      color: color.scale(black, $alpha: -33%); // Perceptual correction, too light otherwise
+      font-size: rem(12);
+      top: rem(-8);
+    }
+
+    &--focus {
+      color: $cPri;
+    }
+  }
+}

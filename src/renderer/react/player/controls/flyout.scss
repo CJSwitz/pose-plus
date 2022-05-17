@@ -1,0 +1,99 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.flyout {
+  @include fontMedium;
+  @include elevation.elevation(3);
+  $color: hsl(0, 0%, 95%);
+  display: flex;
+  flex-direction: column;
+
+
+  background-color: hsla(0, 0%, 0%, 0.75);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  color: $color;
+
+  overflow: hidden;
+
+/*
+  transition-timing-function: $eFastOutSlowIn;
+  transition-property: max-height opacity;
+*/
+
+  &--enter {
+    opacity: 0;
+    max-height: 0;
+
+
+    &-active{
+      opacity: 1;
+      max-height: 100vh;
+
+      transition-timing-function: $eFastOutSlowIn;
+      transition-property: max-height, opacity;
+      transition-delay: 0s, 0s;
+      transition-duration: 500ms, 100ms;
+    }
+  }
+
+  &--exit {
+    opacity: 1;
+    max-height: 100vh;
+
+
+    &-active{
+      opacity: 0;
+      max-height: 0;
+
+
+      transition-timing-function: $eFastOutSlowIn;
+      transition-property: max-height, opacity;
+      transition-delay: 0s,150ms;
+      transition-duration: 200ms, 50ms;
+    }
+  }
+
+  &__item{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    white-space: nowrap;
+
+    margin: 0.25rem 0;
+    transition: color 100ms $eFastOutSlowIn;
+
+    min-height: 1.5rem;
+
+    &--off{
+      color: hsl(0, 0%, 75%);
+    }
+    &--disabled {
+      $dc: hsl(0, 0%, 50%);
+      fill: $dc !important;
+      color: $dc !important;
+      cursor: default;
+    }
+  }
+
+  &__check {
+    width: 1.5rem;
+    margin-right: 0.25rem;
+    fill: $color;
+
+    transition: all 100ms $eFastOutSlowIn;
+
+    &--off {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: hsl(0, 0%, 50%);;
+    margin: 0.5rem -1rem;
+  }
+}

@@ -1,0 +1,12 @@
+@use '~CSS/global' as *;
+
+.player-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  transition: background-color 500ms $eFastOutSlowIn;
+}

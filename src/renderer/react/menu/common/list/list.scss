@@ -1,0 +1,95 @@
+@use "sass:color";
+@use '~CSS/global' as *;
+
+.list {
+  // background-color: color.scale($cP0, $saturation: -50%, $lightness: 20%);
+  background-color: $cBackground;
+  // background-color: hsl(0, 0, 98%);
+  flex: 1 1 1rem;
+  padding: 1rem;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  &__item {
+    // @include elevation.elevation(1);
+    background-color: $cSurface;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    cursor: pointer;
+
+    &--selected {
+      background-color: color.scale($cP1, $saturation: -25%) !important;
+    }
+
+    &:hover {
+      background-color: color.scale($cP1, $saturation: -25%, $lightness: 50%);
+    }
+  }
+
+  &__label {
+    @include fontMedium();
+    margin-right: 1rem;
+    font-size: rem(20);
+    white-space: nowrap;
+  }
+
+  &__sublabel {
+    @include fontRegularItalic();
+    // font-family: 'Montserrat';
+    // font-style: italic;
+    opacity: 0.9;
+    word-break: break-word;
+    min-width: 15rem;
+
+    &--trunc {
+      min-width: 0;
+      overflow: hidden;
+      text-align: left;
+      white-space: nowrap;
+      direction: rtl;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__header-label {
+    @include fontRegularItalic();
+    // font-family: 'Montserrat';
+    // font-style: italic;
+    font-size: rem(20);
+    opacity: 0.75;
+  }
+
+  &__cbx {
+    margin-right: 1rem;
+  }
+
+  &__count {
+    @include fontMedium();
+    margin-left: 0.5rem;
+    min-width: 3rem;
+    text-align: center;
+  }
+
+  &__icon {
+    margin-left: 0.5rem;
+    width: rem(24);
+    height: rem(24);
+    opacity: 0.5;
+
+    &--error {
+      fill: $cError;
+    }
+  }
+
+  &__control {
+    @include iconButton(24);
+    margin-left: 0.5rem;
+  }
+}

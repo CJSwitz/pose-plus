@@ -1,0 +1,75 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.expand {
+  // position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__overlay {
+    position: absolute;
+    z-index: 1;
+    background-color: $cSurface;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      @include elevation.elevation(5);
+      opacity: 0;
+      transition: opacity 100ms;
+    }
+
+    &--animating::before {
+      opacity: 1;
+    }
+
+    &--in {
+      // 350ms Total
+      transition-timing-function: $eFastOutSlowIn;
+      transition-delay: 0ms, 25ms, 25ms, 150ms, 150ms;
+      transition-duration: 50ms, 100ms, 100ms, 150ms, 150ms;
+      transition-property: opacity, left, right, top, bottom;
+    }
+
+    &--out {
+      // 250ms Total
+      transition-timing-function: $eFastOutSlowIn;
+      transition-delay: 0ms, 0ms, 75ms,75ms, 200ms;
+      transition-duration: 200ms, 200ms, 100ms,100ms, 50ms;
+      transition-property: bottom, top, left, right, opacity;
+      // Remember these are reveresed!
+    }
+  }
+
+  &__content {
+    // This is to prevent pseudo element from blocking everything
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    &--in {
+      transition: opacity 150ms ease 150ms;
+    }
+
+    &--out {
+      transition: opacity 50ms;
+    }
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+}

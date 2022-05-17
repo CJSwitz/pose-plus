@@ -1,0 +1,61 @@
+@use '~CSS/global' as *;
+
+.nav {
+  @include flexCol;
+  flex: 0 0 7rem;
+
+  &__item {
+    @include flexCol;
+    flex: 0 0 7rem;
+    width: 100%;
+    color: white;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.4s $eOutExp;
+
+    &:hover .nav__icon{
+      transform: scale(1.15) translateY(-0.188rem);
+    }
+
+    &--selected {
+      opacity: 1;
+    }
+  }
+
+  &__section {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header{
+    margin-top: 1rem;
+    width: 6rem;
+    height: 6rem;
+    fill: white;
+  }
+
+  &__icon {
+    fill: white;
+    width: 3.2rem;
+    height: 3.2rem;
+    transition: transform 0.2s $eOutQuint;
+  }
+
+  &__label {
+    @include fontLabelSemiBold;
+    // font-family: 'Nunito';
+    // font-weight: 600;
+    font-size: rem(19);
+  }
+
+  &__footer {
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+    margin: auto;
+    color: white;
+    opacity: 0.75;
+    user-select: text;
+    margin-bottom: 1rem;
+  }
+}

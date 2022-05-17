@@ -1,0 +1,83 @@
+@use '~CSS/global' as *;
+
+.plcont {
+
+  flex: 0 0 auto;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 1.5rem;
+  height: 3rem;
+  padding: 0 0.75rem;
+
+  @include stickyFadeOut;
+
+  &--docked {
+    position: static;
+    margin: 0.25rem 0;
+  }
+
+  &__anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+  }
+
+  &__flyout {
+    position: absolute;
+    bottom: 3rem;
+
+    @media screen and (max-width: rem(650)) {
+      right: 0;
+    }
+
+    @media screen and (min-width: rem(650)) {
+      left: 0;
+    }
+  }
+
+  &__spacer {
+    width: 3rem;
+    position: relative;
+  }
+
+  &__play {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__icon {
+    height: rem(28);
+    margin: 0 0.125rem;
+    outline: none;
+
+    cursor: pointer;
+    fill: hsla(0,0%,100%, 1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--nav {
+      height: rem(36);
+      fill: white;
+    }
+
+    &--inactive {
+      fill: hsla(0, 0%, 100%, 0.5);
+    }
+  }
+}

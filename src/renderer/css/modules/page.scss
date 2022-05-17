@@ -1,0 +1,22 @@
+@use '~CSS/global' as *;
+
+.page {
+  background-color: $cSurface;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin-top: 1rem;
+  border-top-left-radius: 2rem;
+
+  padding: 1rem;
+
+  position: relative;
+
+  &--centered {
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,10 @@
+@use '~CSS/global' as *;
+
+.breaking-path {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  @include fontRegular;
+  font-size: 1rem;
+}

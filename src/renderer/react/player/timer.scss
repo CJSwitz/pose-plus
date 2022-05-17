@@ -1,0 +1,20 @@
+@use '~CSS/global' as *;
+
+.player-timer {
+  flex: 0 0 1.5rem;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  margin: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1.5rem;
+  z-index: 2;
+  position: absolute;
+
+  @include stickyFadeOut;
+
+  &--docked {
+    position: static;
+  }
+}

@@ -1,0 +1,64 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.button {
+  @include elevation.elevation(1);
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: rem(24);
+  background-color: $cPri;
+  outline: none;
+  padding: 0.2em 1rem;
+  border: 0;
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+
+  transition: all 100ms $eFastOutSlowIn;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0.5em;
+
+    @include elevation.elevation(3);
+
+    opacity: 0;
+    transition: opacity 200ms $eFastOutSlowIn;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &--green {
+    background-color: $cConfirm;
+    color: white;
+  }
+
+  &--red {
+    background-color: $cError;
+    color: white;
+  }
+
+  &--grey {
+    background-color: $cGrey;
+    color: hsl(0, 0%, 20%);
+  }
+
+  &--disabled {
+    @include elevation.elevation(0);
+    background-color: $cGrey;
+    color: white;
+    cursor: auto;
+
+    &::before {
+      opacity: 0 !important;
+    }
+  }
+}

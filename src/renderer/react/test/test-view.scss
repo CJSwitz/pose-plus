@@ -1,0 +1,17 @@
+@use '~CSS/global' as *;
+
+.test {
+  background-color: $cSurface;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-height: 0;
+  flex-direction: column;
+
+}

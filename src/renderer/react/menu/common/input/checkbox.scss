@@ -1,0 +1,42 @@
+@use '~CSS/global' as *;
+
+.checkbox {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  fill: $cPri;
+
+  &--blank {
+    fill: hsl(0, 0%, 50%);
+  }
+
+  &--enter {
+    opacity: 0;
+    transform: scale(0%);
+
+    &-active {
+      opacity: 1;
+      transform: scale(100%);
+
+      transition-duration: 50ms;
+      transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1); // easeOutCubic
+      transition-property: opacity, transform;
+    }
+  }
+
+  &--exit {
+    opacity: 1;
+    transform: scale(100%);
+
+    &-active {
+      opacity: 0;
+      transform: scale(0%);
+
+      transition-duration: 50ms;
+      transition-timing-function: cubic-bezier(0.32, 0, 0.67, 0); // easeInCubic
+      transition-property: opacity, transform;
+    }
+  }
+}

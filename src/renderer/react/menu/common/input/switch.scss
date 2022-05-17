@@ -1,0 +1,63 @@
+// @use "sass:color";
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.switch {
+  width: 3rem;
+  height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  @mixin anim {
+    transition-duration: 100ms;
+    transition-timing-function: $eFastOutSlowIn;
+    transition-property: all;
+  }
+
+  &:hover > * {
+    @include elevation.elevation(1);
+  }
+
+  &__track {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 2.25rem;
+    height: 1rem;
+    margin: 0.25rem 0.375rem;
+    border-radius: 0.5rem;
+
+    @include anim;
+    background-color: $cGrey;
+    opacity: 1;
+
+    &--on {
+      background-color: $cPri;
+      opacity: 0.5;
+    }
+
+  }
+
+  &__thumb {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    border-style: solid;
+
+    @include anim;
+    border-color: hsl(0,0%,50%);
+    border-width: 1px;
+    background-color: white;
+    left: 0;
+
+
+    &--on {
+      left: 1.5rem;
+      background-color: $cPri;
+      border-width: 0;
+    }
+  }
+}

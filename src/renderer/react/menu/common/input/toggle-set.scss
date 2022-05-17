@@ -1,0 +1,42 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.toggle {
+  display: inline-flex;
+  flex-direction: row;
+
+  &__item {
+    // display: inline-block;
+    @include elevation.elevation(1);
+    @include fontLabel;
+    // font-family: Nunito;
+    // font-weight: 700;
+    padding: 0.2rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    background-color: $cGrey;
+
+    transition: all 100ms $eFastOutSlowIn;
+    color: hsl(0, 0%, 25%);
+
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+
+    &--left {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &--right {
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    &--active {
+      @include elevation.elevation(2);
+      background-color: $cPri;
+      color: white;
+
+    }
+  }
+}

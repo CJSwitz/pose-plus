@@ -1,0 +1,94 @@
+// Commonly used mixin and functions
+@use 'vars' as *;
+
+// Fonts
+@mixin fontHeader {
+  font-family: "Fredoka One";
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin fontRegular {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin fontRegularItalic {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin fontMedium {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin fontSemiBold {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin fontLabel {
+  font-family: "Nunito";
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin fontLabelSemiBold {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-style: normal;
+}
+
+// px to rem
+@function rem($px) {
+  @return #{$px * 0.0625}rem;
+}
+
+// Icon Buttons
+@mixin iconButton($dp) {
+  fill: black;
+  min-width: rem($dp);
+  width: rem($dp);
+  height: rem($dp);
+  opacity: 0.5;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    fill: $cPriSemiDark;
+  }
+}
+
+// Slow fade out after delay, instantly fade in
+@mixin stickyFadeOut {
+  transition-timing-function: $eInOutSine;
+  transition-property: opacity;
+
+  &--fadeout {
+    opacity: 0;
+    transition-delay: 1000ms;
+    transition-duration: 1000ms;
+  }
+
+  &--fadein {
+    opacity: 1;
+    transition-delay: 0ms;
+    transition-duration: 200ms;
+  }
+}
+
+// TODO: Double check if this is used still
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}

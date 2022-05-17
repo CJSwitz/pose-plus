@@ -1,0 +1,24 @@
+@use '~CSS/global' as *;
+
+.setup-tabs {
+  margin: 1rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  &__label {
+    display: inline-block;
+    @include fontHeader;
+
+    font-size: 2rem;
+    min-width: 8rem;
+    margin-left: 0.5rem;
+    color: $cPri;
+
+  }
+
+  &__toggle {
+    justify-content: flex-end;
+  }
+}

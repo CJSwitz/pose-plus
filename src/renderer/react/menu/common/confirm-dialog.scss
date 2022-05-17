@@ -1,0 +1,107 @@
+@use '~CSS/global' as *;
+@use '@material/elevation';
+
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 200ms $eFastOutSlowIn;
+  z-index: 100;
+
+  &--open {
+    opacity: 1;
+  }
+
+  &--close {
+    opacity: 0;
+  }
+
+  &__content {
+    margin: auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    width: 50vw;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+
+    align-items: center;
+
+  }
+
+  &__header {
+    @include fontLabel;
+    font-size: 1.5rem;
+    color: $cPri;
+  }
+
+  &__message {
+    flex: 1 1 auto;
+    @include fontMedium;
+    font-size: 1.25rem;
+  }
+
+  &__controls {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    align-self: stretch;
+
+  }
+
+  &__noask {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  &__actions {
+    margin-top: 0.5rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+  }
+
+  &__button {
+
+    cursor: pointer;
+    font-size: rem(18);
+    @include fontSemiBold;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    padding: 0.1rem 0.5rem;
+    border: 0;
+
+    &--cancel {
+      color: $cPri;
+      margin-left: 2rem;
+
+    }
+
+    &--delete {
+      color: $cPri;
+      margin-left: 0.5rem;
+
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use '~CSS/global' as *;
+
+.radio-set {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.radio {
+  margin: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+
+  &__label {
+    margin-left: 0.25rem;
+    flex-shrink: 1;
+    min-width: 0;
+
+    opacity: 0.66;
+    transition: all 100ms $eFastOutSlowIn;
+
+    &--checked {
+      color: $cPri;
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    // To prevent shifting on bold
+
+    &::before {
+      display: block;
+      content: attr(title);
+      font-weight: 500;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+  }
+
+  &__button {
+    position: relative;
+    width: rem(16);
+    height: rem(16);
+    border-radius: 50%;
+    border-style: solid;
+    border-width: rem(2);
+    border-color: hsl(0, 0%, 33%);
+
+    opacity: 0.66;
+    transition: all 100ms $eFastOutSlowIn;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: rem(3);
+      left: rem(3);
+      width: rem(10);
+      height: rem(10);
+      background-color: $cPri;
+      border-radius: 50%;
+      transform: scale(0%);
+      opacity: 0;
+      transition: all 100ms $eFastOutSlowIn;
+    }
+
+    &--checked {
+      border-color: $cPri;
+      opacity: 1;
+
+      &::before {
+        opacity: 1;
+        transform: none;
+      }
+
+    }
+  }
+}

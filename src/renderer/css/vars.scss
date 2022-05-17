@@ -1,0 +1,53 @@
+// *** Colours ***
+
+$cPri: #97005b;
+$cPriLight: #cc4488;
+$cPriSemiDark: #880052;
+
+// Primary Swatch
+$cP9: #97005b;
+$cP8: #bc0762;
+$cP7: #d20c66;
+$cP6: #e80e6b;
+$cP5: #fa116e;
+$cP4: #fa3e85;
+$cP3: #fb639c;
+$cP2: #fb639c;
+$cP1: #fcbdd5;
+$cP0: #fee5ee;
+
+// Secondary Swatch
+$cS9: #671d50;
+$cS8: #8c235e;
+$cS7: #a12566;
+$cS6: #b7266e;
+$cS5: #c82773;
+$cS4: #cc4488;
+$cS3: #d2629d;
+$cS2: #dd8db9;
+$cS1: #e9bad5;
+$cS0: #f5e3ee;
+
+// Additional
+$cBackground: #f0eaed;
+$cSurface: #FFFFFF;
+$cError: #B00020;
+$cConfirm: #417e16;
+$cGrey: #eeeeee;
+
+// *** Eases ***
+// In
+
+$eInExp: cubic-bezier(0.7, 0, 0.84, 0);
+
+// Out
+$eOutExp: cubic-bezier(0.16, 1, 0.3, 1);
+$eOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+$eOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+$eOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Out and In
+$eOutInQuint: cubic-bezier(0.83, 0, 0.17, 1);
+$eOutInQuad: cubic-bezier(0.45, 0, 0.55, 1);
+$eFastOutSlowIn: cubic-bezier(0.4, 0.0, 0.2, 1);
+$eInOutSine: cubic-bezier(0.37, 0, 0.63, 1);
